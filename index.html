@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cotizá y contratá tu seguro de celular en pocos pasos.">
+  <title>Cubrí Seguros | Seguro de celular</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Cubrí Seguros, inicio" data-home>
+        <span class="brand-mark">C</span><span>Cubrí<span class="brand-light"> Seguros</span></span>
+      </a>
+      <div class="header-note"><span class="secure-dot"></span> Contratación 100% online</div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <!-- 0. Inicio -->
+    <section class="screen" data-paso="0" id="pantalla-inicio">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">PROTEGÉ LO QUE TE ACOMPAÑA</span>
+          <h1>Tu celular, <span>siempre protegido.</span></h1>
+          <p class="hero-lead">Elegí la cobertura que va con vos. Cotizá online en minutos, sin trámites complicados.</p>
+          <div class="hero-points">
+            <span><span class="check-icon">✓</span> Cotización inmediata</span>
+            <span><span class="check-icon">✓</span> Planes a tu medida</span>
+            <span><span class="check-icon">✓</span> Contratación simple y segura</span>
+          </div>
+          <button class="btn btn-primary hero-cta" id="comenzar">Cotizar mi seguro <span aria-hidden="true">→</span></button>
+          <p class="hero-footnote">Sin compromiso. Conocé tu precio antes de contratar.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="glow-orb"></div>
+          <div class="phone-card">
+            <div class="phone-speaker"></div>
+            <div class="phone-screen">
+              <div class="shield">✓</div>
+              <strong>Todo<br>en orden.</strong>
+              <span>Tu tranquilidad<br>nos importa.</span>
+              <div class="phone-spark spark-one">✦</div><div class="phone-spark spark-two">✧</div>
+            </div>
+          </div>
+          <div class="floating-tag tag-top"><span>✓</span> Protección activa</div>
+          <div class="floating-tag tag-bottom"><span class="tag-dot"></span> Tu equipo, cuidado</div>
+        </div>
+      </div>
+      <div class="catalog-head"><div><span class="eyebrow">NUESTROS SEGUROS</span><h2>Elegí qué querés proteger</h2></div><span class="catalog-caption">Más opciones, próximamente</span></div>
+      <div class="product-grid">
+        <button class="product-tile product-active" id="producto-celular">
+          <span class="product-icon">▯</span><strong>Celular</strong><small>Protegé tu equipo</small><span class="product-arrow">↗</span>
+        </button>
+        <div class="product-tile unavailable"><span class="product-icon">⌂</span><strong>Hogar</strong><small>Próximamente</small><span class="coming-soon">PRÓXIMAMENTE</span></div>
+        <div class="product-tile unavailable"><span class="product-icon">◇</span><strong>Bicicleta</strong><small>Próximamente</small><span class="coming-soon">PRÓXIMAMENTE</span></div>
+        <div class="product-tile unavailable"><span class="product-icon">✈</span><strong>Viaje</strong><small>Próximamente</small><span class="coming-soon">PRÓXIMAMENTE</span></div>
+      </div>
+    </section>
+
+    <!-- Checkout shared heading / stepper -->
+    <div class="checkout-heading" id="checkout-heading" hidden>
+      <button class="back-home" data-home>← Volver al inicio</button>
+      <div class="checkout-title-row"><div><span class="eyebrow">SEGURO DE CELULAR</span><h1 id="step-title">Cotizá tu equipo</h1><p id="step-subtitle">Contanos un poco sobre tu celular.</p></div><span class="secure-label">⌑ Compra segura</span></div>
+      <div class="stepper" id="stepper" aria-label="Progreso de contratación">
+        <div class="step-item" data-step-indicator="1"><span class="step-number">1</span><span>Tu equipo</span></div><span class="step-line"></span>
+        <div class="step-item" data-step-indicator="2"><span class="step-number">2</span><span>Plan</span></div><span class="step-line"></span>
+        <div class="step-item" data-step-indicator="3"><span class="step-number">3</span><span>Tus datos</span></div><span class="step-line"></span>
+        <div class="step-item" data-step-indicator="4"><span class="step-number">4</span><span>Pago</span></div>
+      </div>
+    </div>
+
+    <div class="checkout-layout" id="checkout-layout" hidden>
+      <div class="form-column">
+        <!-- 1. Cotización -->
+        <section class="screen" data-paso="1" id="pantalla-equipo" hidden>
+          <div class="panel card">
+            <div class="panel-heading"><div><span class="section-kicker">PASO 1 DE 4</span><h2>Contanos sobre tu celular</h2><p>Necesitamos estos datos para calcular tu cobertura.</p></div><span class="panel-icon">▯</span></div>
+            <form id="form-equipo" novalidate>
+              <div class="field-grid">
+                <div class="field" role="group" id="group-marca"><label for="marca">Marca <span class="required">*</span></label><select id="marca" name="marca"><option value="">Seleccioná una marca</option><option>Apple</option><option>Samsung</option><option>Motorola</option><option>Xiaomi</option><option>Huawei</option><option>Otras</option></select><p class="field-error" id="error-marca" role="alert"></p></div>
+                <div class="field" role="group" id="group-modelo"><label for="modelo">Modelo <span class="required">*</span></label><input id="modelo" name="modelo" type="text" placeholder="Ej.: Galaxy A55" maxlength="40" autocomplete="off"><p class="field-error" id="error-modelo" role="alert"></p></div>
+                <div class="field field-full" role="group" id="group-valor"><label for="valor">¿Cuánto vale tu celular? <span class="required">*</span></label><div class="currency-input"><span>$</span><input id="valor" name="valor" type="text" inputmode="numeric" placeholder="600.000" autocomplete="off"></div><small class="field-help">Ingresá un valor entre $100.000 y $2.500.000.</small><p class="field-error" id="error-valor" role="alert"></p></div>
+              </div>
+              <div class="field age-field" role="group" id="group-antiguedad"><label>¿Cuánto tiempo tiene tu equipo? <span class="required">*</span></label>
+                <div class="choice-grid age-grid">
+                  <label class="choice-card"><input type="radio" name="antiguedad" value="menos1"><span class="choice-dot"></span><span><strong>Menos de 1 año</strong><small>Equipo reciente</small></span></label>
+                  <label class="choice-card"><input type="radio" name="antiguedad" value="1a2"><span class="choice-dot"></span><span><strong>Entre 1 y 2 años</strong><small>Buen estado</small></span></label>
+                  <label class="choice-card"><input type="radio" name="antiguedad" value="mas2"><span class="choice-dot"></span><span><strong>Más de 2 años</strong><small>Equipo usado</small></span></label>
+                </div><p class="field-error" id="error-antiguedad" role="alert"></p>
+              </div>
+              <div class="form-footer"><span class="required-note">* Campos obligatorios</span><button class="btn btn-primary" type="submit" id="btn-equipo" disabled>Ver planes <span>→</span></button></div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 2. Planes -->
+        <section class="screen" data-paso="2" id="pantalla-planes" hidden>
+          <div class="panel card">
+            <div class="panel-heading"><div><span class="section-kicker">PASO 2 DE 4</span><h2>Elegí tu nivel de protección</h2><p>Todos los planes incluyen asistencia para tu celular.</p></div><span class="panel-icon">✧</span></div>
+            <div class="plans-grid" id="planes-container" aria-live="polite"></div>
+            <div class="info-strip"><span class="info-symbol">ⓘ</span><span>El precio se calcula según el valor y la antigüedad de tu equipo.</span></div>
+            <div class="form-footer"><button class="btn btn-outline" type="button" data-back="1">← Volver</button><button class="btn btn-primary" type="button" id="btn-plan">Continuar con este plan <span>→</span></button></div>
+          </div>
+        </section>
+
+        <!-- 3. Datos personales -->
+        <section class="screen" data-paso="3" id="pantalla-datos" hidden>
+          <div class="panel card">
+            <div class="panel-heading"><div><span class="section-kicker">PASO 3 DE 4</span><h2>¿Quién será el titular?</h2><p>Completá tus datos para emitir la póliza.</p></div><span class="panel-icon">♙</span></div>
+            <form id="form-datos" novalidate>
+              <div class="field-grid">
+                <div class="field" role="group" id="group-nombre"><label for="nombre">Nombre <span class="required">*</span></label><input id="nombre" type="text" placeholder="Tu nombre" autocomplete="given-name"><p class="field-error" id="error-nombre" role="alert"></p></div>
+                <div class="field" role="group" id="group-apellido"><label for="apellido">Apellido <span class="required">*</span></label><input id="apellido" type="text" placeholder="Tu apellido" autocomplete="family-name"><p class="field-error" id="error-apellido" role="alert"></p></div>
+                <div class="field" role="group" id="group-dni"><label for="dni">DNI <span class="required">*</span></label><input id="dni" type="text" inputmode="numeric" maxlength="8" placeholder="Ej.: 35123456"><p class="field-error" id="error-dni" role="alert"></p></div>
+                <div class="field" role="group" id="group-nacimiento"><label for="nacimiento">Fecha de nacimiento <span class="required">*</span></label><input id="nacimiento" type="date" autocomplete="bday"><p class="field-error" id="error-nacimiento" role="alert"></p></div>
+                <div class="field" role="group" id="group-email"><label for="email">Email <span class="required">*</span></label><input id="email" type="email" placeholder="nombre@correo.com" autocomplete="email"><p class="field-error" id="error-email" role="alert"></p></div>
+                <div class="field" role="group" id="group-celular"><label for="celular">Celular <span class="required">*</span></label><input id="celular" type="tel" inputmode="tel" placeholder="11 5555-1234" autocomplete="tel"><p class="field-error" id="error-celular" role="alert"></p></div>
+              </div>
+              <div class="terms-field" id="group-terminos"><label class="checkbox-line"><input type="checkbox" id="terminos"><span>Acepto los <a href="#terminos-info" id="ver-terminos">términos y condiciones</a> del seguro.</span></label><p class="field-error" id="error-terminos" role="alert"></p></div>
+              <div class="form-footer"><button class="btn btn-outline" type="button" data-back="2">← Volver</button><button class="btn btn-primary" type="submit" id="btn-datos" disabled>Continuar al pago <span>→</span></button></div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 4. Pago -->
+        <section class="screen" data-paso="4" id="pantalla-pago" hidden>
+          <div class="panel card">
+            <div class="panel-heading"><div><span class="section-kicker">PASO 4 DE 4</span><h2>Último paso: tu medio de pago</h2><p>Este pago es una simulación académica. No uses datos de tarjetas reales.</p></div><span class="panel-icon">▤</span></div>
+            <form id="form-pago" novalidate>
+              <div class="field">
+                <label>Medio de pago <span class="required">*</span></label>
+                <div class="payment-methods"><label class="method-option"><input type="radio" name="metodo" value="credito" checked><span>▣ Tarjeta de crédito</span></label><label class="method-option"><input type="radio" name="metodo" value="debito"><span>▤ Tarjeta de débito</span></label></div>
+              </div>
+              <div class="field-grid">
+                <div class="field field-full" role="group" id="group-tarjeta"><label for="tarjeta">Número de tarjeta <span class="required">*</span></label><input id="tarjeta" type="text" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off"><small class="field-help">Tarjeta aprobada de prueba: 4111 1111 1111 1111</small><p class="field-error" id="error-tarjeta" role="alert"></p></div>
+                <div class="field" role="group" id="group-vencimiento"><label for="vencimiento">Vencimiento <span class="required">*</span></label><input id="vencimiento" type="text" inputmode="numeric" maxlength="5" placeholder="MM/AA" autocomplete="off"><p class="field-error" id="error-vencimiento" role="alert"></p></div>
+                <div class="field" role="group" id="group-cvv"><label for="cvv">Código de seguridad (CVV) <span class="required">*</span></label><input id="cvv" type="password" inputmode="numeric" maxlength="3" placeholder="123" autocomplete="off"><p class="field-error" id="error-cvv" role="alert"></p></div>
+                <div class="field field-full" role="group" id="group-titular-pago"><label for="titular-pago">Nombre del titular de la tarjeta <span class="required">*</span></label><input id="titular-pago" type="text" placeholder="Como figura en la tarjeta" autocomplete="cc-name"><p class="field-error" id="error-titular-pago" role="alert"></p></div>
+              </div>
+              <div class="test-cards"><strong>Tarjetas para probar</strong><span>✓ Aprobada: 4111 1111 1111 1111</span><span>× Rechazada: 4000 0000 0000 0002</span></div>
+              <div class="form-footer"><button class="btn btn-outline" type="button" data-back="3">← Volver</button><button class="btn btn-primary" type="submit" id="btn-pagar" disabled>Pagar y contratar <span>→</span></button></div>
+              <p class="simulation-note">Simulación educativa. No se realizará ningún cobro.</p>
+            </form>
+          </div>
+        </section>
+
+        <!-- 5. Éxito -->
+        <section class="screen" data-paso="5" id="pantalla-exito" hidden>
+          <div class="result-card success-result card">
+            <div class="result-icon">✓</div><span class="section-kicker">CONTRATACIÓN COMPLETADA</span><h2>¡Ya estás protegido!</h2><p class="result-lead">Tu solicitud fue aprobada y generamos tu póliza.</p>
+            <div class="policy-number"><small>NÚMERO DE PÓLIZA</small><strong id="numero-poliza">POL-2026-000001</strong></div>
+            <div class="success-details" id="detalle-exito"></div>
+            <p class="email-confirmation">Enviamos el detalle de la contratación a <strong id="email-confirmacion"></strong>.</p>
+            <button class="btn btn-primary" id="volver-inicio">Volver al inicio</button>
+          </div>
+        </section>
+
+        <!-- 6. Error -->
+        <section class="screen" data-paso="6" id="pantalla-error" hidden>
+          <div class="result-card error-result card">
+            <div class="result-icon">!</div><span class="section-kicker">NO PUDIMOS COMPLETAR EL PAGO</span><h2>El pago fue rechazado</h2><p class="result-lead">La tarjeta ingresada no pudo ser aprobada. No se realizó ningún cobro.</p>
+            <div class="alert alert-error"><strong>Tarjeta rechazada.</strong> Revisá los datos o elegí otro medio de pago.</div>
+            <div class="form-footer result-actions"><button class="btn btn-outline" id="cambiar-medio">Cambiar medio de pago</button><button class="btn btn-primary" id="reintentar">Reintentar pago →</button></div>
+          </div>
+        </section>
+      </div>
+      <aside class="summary-column" id="summary-column">
+        <div class="summary-card card" id="summary-card">
+          <div class="summary-title"><h3>Tu resumen</h3><span class="summary-lock">⌑</span></div>
+          <div class="summary-product"><span class="summary-phone">▯</span><div><strong>Seguro de celular</strong><small id="summary-device">Completá los datos de tu equipo</small></div></div>
+          <div class="summary-line"><span>Plan</span><strong id="summary-plan">Plus</strong></div>
+          <div class="summary-line"><span>Antigüedad</span><strong id="summary-age">A confirmar</strong></div>
+          <div class="summary-divider"></div>
+          <div class="summary-total"><span>Tu cuota mensual</span><strong id="summary-price">$ 0</strong></div>
+          <small class="summary-caption">Precio mensual estimado en pesos argentinos.</small>
+          <div class="summary-trust"><span>✓</span> Tus datos están protegidos</div>
+        </div>
+        <div class="help-card"><span>¿Necesitás ayuda?</span><p>Estamos para acompañarte durante la contratación.</p><span class="help-contact">Soporte online</span></div>
+      </aside>
+    </div>
+
+    <footer class="site-footer"><span>© 2026 Cubrí Seguros. Proyecto académico.</span><span>Protección simple, tranquilidad real.</span></footer>
+  </main>
+</body>
+</html>
