@@ -75,4 +75,14 @@ Para las pruebas, completar vencimiento con una fecha futura en formato `MM/AA`,
 
 ## Capturas
 
-Agregar aquí capturas de la versión mobile (aprox. 390 px) y desktop (aprox. 1440 px) antes de entregar.
+### Versión mobile (390 px)
+
+![Versión mobile](capturas/mobile.png)
+
+### Versión desktop (1440 px)
+
+![Versión desktop](capturas/desktop.png)
+
+## Funcionalidades bonus
+
+No se implementaron funcionalidades bonus adicionales.
