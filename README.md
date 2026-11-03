@@ -65,9 +65,13 @@ Usar exclusivamente estos números ficticios:
 
 Para las pruebas, completar vencimiento con una fecha futura en formato `MM/AA`, CVV de tres dígitos y cualquier nombre de titular. No usar tarjetas reales.
 
-## Publicación
+## Aplicación publicada
 
-Se puede publicar desde GitHub Pages: en el repositorio, abrir **Settings → Pages**, seleccionar **Deploy from a branch**, elegir `main` y `/ (root)`, y guardar. Esperar a que GitHub muestre la URL pública.
+[Ver Cubrí Seguros](https://luciatejeda29-prog.github.io/cubri-seguros/)
+
+## Repositorio
+
+[Ver código fuente en GitHub](https://github.com/luciatejeda29-prog/cubri-seguros)
 
 ## Capturas
 
